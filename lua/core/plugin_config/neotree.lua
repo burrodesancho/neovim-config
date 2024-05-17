@@ -2,7 +2,7 @@ require("neo-tree").setup({
   popup_border_style = "rounded",
   window = {
     position = "left",
-    width = 35,
+    width = 30,
   },
 })
 
