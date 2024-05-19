@@ -1,8 +1,8 @@
 local plugins ={
-  { 
-    "catppuccin/nvim", 
-    name = "catppuccin", 
-    priority = 1000 
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000
   },
   "tpope/vim-commentary",
   {
@@ -33,8 +33,7 @@ local plugins ={
     event = "VeryLazy",
   },
   -- Visualize buffers as tabs
-  { "akinsho/bufferline.nvim", 
-    version = "*",
+  { "akinsho/bufferline.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
   },
   {

@@ -7,9 +7,9 @@ require('bufferline').setup{
         text = "NvimTree",
         highlight = "Directory",
         separator = true,
-      }
-    }
-  }
+      },
+    },
+  },
 }
 
 vim.keymap.set('n', '<leader>bl', ':BufferLinePick<CR>')
