@@ -4,7 +4,6 @@ local plugins ={
     name = "catppuccin",
     priority = 1000
   },
-  "tpope/vim-commentary",
   {
     "nvim-tree/nvim-tree.lua",
     event = "VeryLazy",
