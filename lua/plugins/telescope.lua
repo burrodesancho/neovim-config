@@ -5,7 +5,7 @@ return {
     "nvim-lua/plenary.nvim",
     "nvim-telescope/telescope-ui-select.nvim"
   },
-  event = VeryLazy,
+  event = "VeryLazy",
   config = function()
     require('telescope').setup({
       pickers = {
