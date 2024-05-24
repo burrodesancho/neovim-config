@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-doc-name, inject-field, undefined-field
 return {
   "nvim-treesitter/nvim-treesitter",
   build = ":TSUpdate",
