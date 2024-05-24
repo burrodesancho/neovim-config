@@ -4,7 +4,7 @@ return {
   build = ":TSUpdate",
   event = "VeryLazy",
   config = function()
-    require'nvim-treesitter.configs'.setup {
+    require("nvim-treesitter.configs").setup({
       -- Install parsers synchronously (only applied to `ensure_installed`)
       sync_install = false,
       auto_install = true,
@@ -20,7 +20,7 @@ return {
         "python",
         "vim",
         "vimdoc",
-        "yaml"
+        "yaml",
       },
 
       incremental_selection = {
@@ -58,7 +58,7 @@ return {
         vim.schedule(function()
           require("lazy").load({ plugins = { "nvim-treesitter-textobjects" } })
         end)
-      end
-    }
-  end
+      end,
+    })
+  end,
 }

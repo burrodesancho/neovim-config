@@ -17,5 +17,5 @@ return {
         width = 30,
       },
     })
-  end
+  end,
 }

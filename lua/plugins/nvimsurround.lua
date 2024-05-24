@@ -3,5 +3,5 @@ return {
   event = "VeryLazy",
   config = function()
     require("nvim-surround").setup({})
-  end
+  end,
 }
