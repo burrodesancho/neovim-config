@@ -6,18 +6,6 @@ return {
       "saadparwaiz1/cmp_luasnip",
       "rafamadriz/friendly-snippets",
     },
-    configure = function()
-      local luasnip = require("luasnip")
-      vim.keymap.set({"i", "s"}, "<Tab>",
-        function()
-          if luasnip.expand_or_jumpable() then
-            luasnip.expand_or_jump()
-          else
-            vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Tab>", true, false, true), "n", false)
-          end
-        end,
-        {silent = true})
-    end,
   },
   {
     "hrsh7th/nvim-cmp",
