@@ -41,10 +41,6 @@ return {
       })
 
       local lspconfig = require("lspconfig")
-      lspconfig.html.setup({
-        capabilities = capabilities,
-        handlers = handlers,
-      })
       lspconfig.lua_ls.setup({
         capabilities = capabilities,
         handlers = handlers,
