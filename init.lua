@@ -5,7 +5,7 @@ if not vim.loop.fs_stat(lazypath) then
     "clone",
     "--filter=blob:none",
     "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable",     -- latest stable release
+    "--branch=stable", -- latest stable release
     lazypath,
   })
 end
@@ -13,7 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("options")
 
-opts = {
+local opts = {
   ui = {
     border = "rounded",
   },
