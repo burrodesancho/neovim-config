@@ -51,6 +51,9 @@ return {
       lspconfig.lua_ls.setup({
         capabilities = capabilities,
         handlers = handlers,
+        -- on_attach = function(client, bufnr)
+        --   client.server_capabilities.documentFormattingProvider = false
+        -- end,
       })
       lspconfig.pyright.setup({
         capabilities = capabilities,
