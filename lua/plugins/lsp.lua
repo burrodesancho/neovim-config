@@ -54,6 +54,14 @@ return {
         -- on_attach = function(client, bufnr)
         --   client.server_capabilities.documentFormattingProvider = false
         -- end,
+        settings = {
+          Lua = {
+            diagnostics = {
+              -- Get the language server to recognize the `vim` global
+              globals = { 'vim' },
+            },
+          },
+        },
       })
       lspconfig.pyright.setup({
         capabilities = capabilities,
