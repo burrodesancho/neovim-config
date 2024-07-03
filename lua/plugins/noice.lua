@@ -1,11 +1,24 @@
 return {
-  "folke/noice.nvim",
-  event = "VeryLazy",
-  opts = {
-    -- add any options here
-  },
-  dependencies = {
-    "MunifTanjim/nui.nvim",
-    "rcarriga/nvim-notify",
-  }
+--   "folke/noice.nvim",
+--   event = "VeryLazy",
+--   opts = {
+--     -- add any options here
+--   },
+--   dependencies = {
+--     "MunifTanjim/nui.nvim",
+--     {
+--       "rcarriga/nvim-notify",
+--       opts = { background_color = "#000000" },
+--     },
+--   },
+--   -- config = function()
+--   --   require("noice").setup({
+--   --     routes = {
+--   --       {
+--   --         view = "notify",
+--   --         filter = { event = "msg_showmode" },
+--   --       },
+--   --     },
+--   --   })
+--   -- end,
 }
