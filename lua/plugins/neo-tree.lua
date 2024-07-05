@@ -1,15 +1,16 @@
 return {
   "nvim-neo-tree/neo-tree.nvim",
-  branch = "v3.x",
+  enabled = true,
+  keys = {
+    { "<leader>e",  ":Neotree filesystem toggle<CR>",    desc = "Neotree" },
+    { "<leader>bf", ":Neotree buffers reveal float<CR>", desc = "Neotree buffers" },
+  },
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-tree/nvim-web-devicons",
     "MunifTanjim/nui.nvim",
   },
   config = function()
-    vim.keymap.set("n", "<leader>e", ":Neotree filesystem toggle<CR>", {})
-    vim.keymap.set("n", "<leader>bf", ":Neotree buffers reveal float<CR>", {})
-
     require("neo-tree").setup({
       popup_border_style = "rounded",
       window = {

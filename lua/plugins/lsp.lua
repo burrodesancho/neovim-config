@@ -1,7 +1,9 @@
 return {
   {
     "williamboman/mason.nvim",
-    lazy = false,
+    enabled = true,
+    cmd = "Mason",
+    event = "BufReadPre",
     config = function()
       require("mason").setup({
         ui = { border = "rounded" },
@@ -10,7 +12,8 @@ return {
   },
   {
     "williamboman/mason-lspconfig.nvim",
-    lazy = false,
+    enabled = true,
+    event = "BufReadPre",
     opts = {
       auto_install = true,
     },
@@ -22,6 +25,7 @@ return {
   },
   {
     "neovim/nvim-lspconfig",
+    enabled = true,
     lazy = false,
     config = function()
       local capabilities = require("cmp_nvim_lsp").default_capabilities()

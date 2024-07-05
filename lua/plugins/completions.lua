@@ -1,6 +1,8 @@
 return {
   {
     "L3MON4D3/LuaSnip",
+    enabled = true,
+    event = "InsertEnter",
     dependencies = {
       "saadparwaiz1/cmp_luasnip",
       "rafamadriz/friendly-snippets",
@@ -8,6 +10,8 @@ return {
   },
   {
     "hrsh7th/nvim-cmp",
+    enabled = true,
+    event = "InsertEnter",
     dependencies = {
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-buffer",
@@ -55,7 +59,7 @@ return {
             name = "nvim_lsp",
             entry_filter = function(entry)
               return require("cmp").lsp.CompletionItemKind.Snippet ~= entry:get_kind()
-            end 
+            end
           },
           { name = "luasnip" },
         }, {

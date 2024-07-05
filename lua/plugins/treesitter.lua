@@ -1,6 +1,7 @@
 ---@diagnostic disable: undefined-doc-name, inject-field, undefined-field
 return {
   "nvim-treesitter/nvim-treesitter",
+  enabled = true,
   build = ":TSUpdate",
   event = "VeryLazy",
   config = function()
