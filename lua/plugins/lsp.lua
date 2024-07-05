@@ -26,7 +26,7 @@ return {
   {
     "neovim/nvim-lspconfig",
     enabled = true,
-    lazy = false,
+    ft = { "lua", "python"},
     config = function()
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
