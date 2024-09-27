@@ -14,6 +14,8 @@ return {
         find_files = {
           file_ignore_patterns = {
             ".git",
+            ".mypy*",
+            "*venv*",
           },
           hidden = true,
         },
