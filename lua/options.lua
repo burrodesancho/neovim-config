@@ -48,7 +48,7 @@ vim.keymap.set("n", "<C-l>", ":wincmd l<CR>", { desc = "Move to the right pane" 
 vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>", { desc = "No Highlight Search" })
 
 -- Yank to clipboard
-vim.keymap.set({ "n", "v" }, "<leader>y", '[["+y]]', { desc = "Yank to clipboard" })
+vim.keymap.set({ "n", "v" }, "<leader>y", '"+y]', { desc = "Yank to clipboard" })
 
 -- Paste without overwriting register
 vim.keymap.set("v", "p", '"_dP')
@@ -70,7 +70,7 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("n", "J", "mzJ`z")
 
 -- Replace the word at current position
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Replace the word under the cursor" })
+vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>//gI<Left><Left><Left>]], { desc = "Replace the word under the cursor" })
 
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
