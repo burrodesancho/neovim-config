@@ -54,7 +54,7 @@ vim.keymap.set("n", "<C-l>", ":wincmd l<CR>", { desc = "Move to the right pane" 
 vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>", { desc = "No Highlight Search" })
 
 -- Yank to clipboard
-vim.keymap.set({ "n", "v" }, "<leader>y", '[["+y]]', { desc = "Yank to clipboard" })
+vim.keymap.set({ "n", "v" }, "<leader>y", '"+y', { desc = "Yank to clipboard" })
 
 -- Paste without overwriting register
 vim.keymap.set("v", "p", '"_dP')
