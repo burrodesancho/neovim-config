@@ -78,6 +78,12 @@ vim.keymap.set("n", "J", "mzJ`z")
 -- Replace the word at current position
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Replace the word under the cursor" })
 
+-- Show inline messages
+-- Show in floating window
+vim.keymap.set("n", "<leader>d", "<cmd>lua vim.diagnostic.open_float()<CR>", { desc = "Inline message to floating windows"})
+vim.keymap.set("n", "<leader>dn", "<cmd>lua vim.diagnostic.goto_next()<CR>", { desc = "Go to next message"})
+vim.keymap.set("n", "<leader>dN", "<cmd>lua vim.diagnostic.goto_prev()<CR>", { desc = "Go to previous message"})
+
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
 --  See `:help vim.highlight.on_yank()`
