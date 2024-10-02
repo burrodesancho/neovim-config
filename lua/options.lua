@@ -24,7 +24,13 @@ vim.opt.sidescrolloff = 8    --minimum number of columns to keep above and below
 
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.undodir = os.getenv("HOME") .. "/.nvim/undodir"
+
+-- Make sure undodir works on Windows
+local home = os.getenv("HOME")
+if (home == nil) then
+  home = os.getenv("UserProfile")
+end
+vim.opt.undodir = home .. "/.nvim/undodir"
 vim.opt.undofile = true
 
 vim.opt.termguicolors = true
