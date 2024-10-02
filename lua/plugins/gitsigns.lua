@@ -35,6 +35,8 @@ return {
           end, { expr = true })
 
           -- Actions
+          map("n", "<leader>hn", gs.next_hunk, { desc = "GitSigns next hunk" })
+          map("n", "<leader>hp", gs.prev_hunk, { desc = "GitSigns previous hunk" })
           map("n", "<leader>hs", gs.stage_hunk, { desc = "GitSigns stage hunk" })
           map("n", "<leader>hr", gs.reset_hunk, { desc = "GitSigns reset hunk" })
           map("v", "<leader>hs", function()
