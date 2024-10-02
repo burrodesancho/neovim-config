@@ -85,7 +85,7 @@ return {
             },
           }),
         },
-      }),
+      })
 
       -- `:` cmdline setup.
       cmp.setup.cmdline(':', {
