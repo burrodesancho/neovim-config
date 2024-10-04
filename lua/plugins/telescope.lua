@@ -13,7 +13,7 @@ return {
       pickers = {
         find_files = {
           file_ignore_patterns = {
-            ".git",
+            "%.git",
             ".mypy*",
             "*venv*",
           },

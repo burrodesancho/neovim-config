@@ -24,7 +24,13 @@ vim.opt.sidescrolloff = 8    --minimum number of columns to keep above and below
 
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.undodir = os.getenv("HOME") .. "/.nvim/undodir"
+
+-- Make sure undodir works on Windows
+local home = os.getenv("HOME")
+if (home == nil) then
+  home = os.getenv("UserProfile")
+end
+vim.opt.undodir = home .. "/.nvim/undodir"
 vim.opt.undofile = true
 
 vim.opt.termguicolors = true
@@ -48,7 +54,7 @@ vim.keymap.set("n", "<C-l>", ":wincmd l<CR>", { desc = "Move to the right pane" 
 vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>", { desc = "No Highlight Search" })
 
 -- Yank to clipboard
-vim.keymap.set({ "n", "v" }, "<leader>y", '"+y]', { desc = "Yank to clipboard" })
+vim.keymap.set({ "n", "v" }, "<leader>y", '"+y', { desc = "Yank to clipboard" })
 
 -- Paste without overwriting register
 vim.keymap.set("v", "p", '"_dP')
@@ -71,6 +77,12 @@ vim.keymap.set("n", "J", "mzJ`z")
 
 -- Replace the word at current position
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>//gI<Left><Left><Left>]], { desc = "Replace the word under the cursor" })
+
+-- Show inline messages
+-- Show in floating window
+vim.keymap.set("n", "<leader>d", "<cmd>lua vim.diagnostic.open_float()<CR>", { desc = "Inline message to floating windows"})
+vim.keymap.set("n", "<leader>dn", "<cmd>lua vim.diagnostic.goto_next()<CR>", { desc = "Go to next message"})
+vim.keymap.set("n", "<leader>dN", "<cmd>lua vim.diagnostic.goto_prev()<CR>", { desc = "Go to previous message"})
 
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode

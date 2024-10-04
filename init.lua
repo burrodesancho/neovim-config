@@ -13,10 +13,16 @@ vim.opt.rtp:prepend(lazypath)
 
 require("options")
 
-local opts = {
-  ui = {
-    border = "rounded",
-  },
-}
-
-require("lazy").setup("plugins", opts)
+if vim.g.vscode then
+  -- VScode stuff
+  require("lazy").setup("vscode_stuff")
+else
+  -- Regular nvim
+  local opts = {
+    ui = {
+      border = "rounded",
+    },
+  }
+  
+  require("lazy").setup("plugins", opts)
+end
