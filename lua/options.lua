@@ -44,12 +44,12 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
-if vim.g.vscode then
+if not vim.g.vscode then
   -- Navigate vim panes better
-  vim.keymap.set("n", "<C-k>", ":wincmd k<CR>", { desc = "Move to the upper pane" })
-  vim.keymap.set("n", "<C-j>", ":wincmd j<CR>", { desc = "Move to the lower pane" })
-  vim.keymap.set("n", "<C-h>", ":wincmd h<CR>", { desc = "Move to the left pane" })
-  vim.keymap.set("n", "<C-l>", ":wincmd l<CR>", { desc = "Move to the right pane" })
+  vim.keymap.set("n", "<C-k>", ":wincmd k<CR>", { desc = "Move to the upper pane", silent = true })
+  vim.keymap.set("n", "<C-j>", ":wincmd j<CR>", { desc = "Move to the lower pane", silent = true })
+  vim.keymap.set("n", "<C-h>", ":wincmd h<CR>", { desc = "Move to the left pane", silent = true })
+  vim.keymap.set("n", "<C-l>", ":wincmd l<CR>", { desc = "Move to the right pane", silent = true })
 end
 
 --  Remove highlighted text after search
