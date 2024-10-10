@@ -2,8 +2,8 @@ return {
   "nvim-neo-tree/neo-tree.nvim",
   enabled = true,
   keys = {
-    { "<leader>e",  ":Neotree filesystem toggle<CR>", {desc = "Neotree", silent = true }},
-    { "<leader>bf", ":Neotree buffers reveal float<CR>", desc = "Neotree buffers" },
+    { "<leader>e",  "<cmd>Neotree filesystem toggle<CR>", desc = "Neotree" },
+    { "<leader>bf", "<cmd>Neotree buffers reveal float<CR>", desc = "Neotree buffers" },
   },
   dependencies = {
     "nvim-lua/plenary.nvim",
