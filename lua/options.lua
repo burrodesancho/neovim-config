@@ -53,18 +53,18 @@ if not vim.g.vscode then
 end
 
 --  Remove highlighted text after search
-vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>", { desc = "No Highlight Search" })
+vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>", { desc = "No Highlight Search", silent = true })
 
 -- Yank to clipboard
-vim.keymap.set({ "n", "v" }, "<leader>y", '"+y', { desc = "Yank to clipboard" })
+vim.keymap.set({ "n", "v" }, "<leader>y", '"+y', { desc = "Yank to clipboard", silent = true })
 
 -- Paste without overwriting register
 vim.keymap.set("v", "p", '"_dP')
 
 -- Buffers
-vim.keymap.set("n", "<leader>p", ":bp<CR>", { desc = "Previous Buffer" })
-vim.keymap.set("n", "<leader>n", ":bn<CR>", { desc = "Next Buffer" })
-vim.keymap.set("n", "<leader>x", ":bd<CR>", { desc = "Close Buffer" })
+vim.keymap.set("n", "<leader>p", ":bp<CR>", { desc = "Previous Buffer", silent = true })
+vim.keymap.set("n", "<leader>n", ":bn<CR>", { desc = "Next Buffer", silent = true })
+vim.keymap.set("n", "<leader>x", ":bd<CR>", { desc = "Close Buffer", silent = true })
 
 -- Stay in indent mode
 vim.keymap.set("v", "<", "<gv")
@@ -78,7 +78,7 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("n", "J", "mzJ`z")
 
 -- Replace the word at current position
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>//gI<Left><Left><Left>]], { desc = "Replace the word under the cursor" })
+vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>//gI<Left><Left><Left>]], { desc = "Replace the word under the cursor", silent = true })
 
 -- Show inline messages
 -- Show in floating window

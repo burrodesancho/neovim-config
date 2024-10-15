@@ -23,6 +23,6 @@ else
       border = "rounded",
     },
   }
-  
+
   require("lazy").setup("plugins", opts)
 end
