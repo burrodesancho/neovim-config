@@ -1,3 +1,4 @@
+vim.keymap.set("n", "<Space>", "<Nop>", { silent = true })
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
@@ -82,9 +83,9 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>//gI<Left><Left><Left>]], {
 
 -- Show inline messages
 -- Show in floating window
-vim.keymap.set("n", "<leader>d", "<cmd>lua vim.diagnostic.open_float()<CR>", { desc = "Inline message to floating windows"})
+vim.keymap.set("n", "<leader>do", "<cmd>lua vim.diagnostic.open_float()<CR>", { desc = "Inline message to floating windows"})
 vim.keymap.set("n", "<leader>dn", "<cmd>lua vim.diagnostic.goto_next()<CR>", { desc = "Go to next message"})
-vim.keymap.set("n", "<leader>dN", "<cmd>lua vim.diagnostic.goto_prev()<CR>", { desc = "Go to previous message"})
+vim.keymap.set("n", "<leader>dp", "<cmd>lua vim.diagnostic.goto_prev()<CR>", { desc = "Go to previous message"})
 
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
