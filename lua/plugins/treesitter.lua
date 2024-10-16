@@ -3,7 +3,10 @@ return {
   "nvim-treesitter/nvim-treesitter",
   enabled = true,
   build = ":TSUpdate",
-  event = "VeryLazy",
+  event = { "BufReadPre", "BufNewFile" },
+  dependencies = {
+    "nvim-treesitter/nvim-treesitter-textobjects",
+  },
   config = function()
     require("nvim-treesitter.configs").setup({
       -- Install parsers synchronously (only applied to `ensure_installed`)
@@ -34,6 +37,23 @@ return {
         },
       },
       textobjects = {
+        select = {
+          enable = true,
+          lookahead = true, -- Automatically jump forward to textobject
+          keymaps = {
+            ["aa"] = "@parameter.outer",
+            ["ia"] = "@parameter.inner",
+            ["af"] = "@function.outer",
+            ["if"] = "@function.inner",
+            ["ac"] = "@class.outer",
+            ["ic"] = "@class.inner",
+            ["ai"] = "@conditional.outer",
+            ["ii"] = "@conditional.inner",
+            ["al"] = "@loop.outer",
+            ["il"] = "@loop.inner",
+            ["at"] = "@comment.outer",
+          },
+        },
         move = {
           enable = true,
           goto_next_start = { ["]f"] = "@function.outer", ["]c"] = "@class.outer" },
