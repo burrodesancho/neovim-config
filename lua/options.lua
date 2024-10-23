@@ -8,33 +8,38 @@ vim.opt.relativenumber = true
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
-vim.opt.expandtab = true     -- convert tabs to spaces
-vim.opt.autoindent = true    -- auto indentation
-vim.opt.list = true          -- show tab characters and trailing whitespace
+vim.opt.expandtab = true -- convert tabs to spaces
+vim.opt.autoindent = true -- auto indentation
+vim.opt.list = true -- show tab characters and trailing whitespace
+vim.opt.wrap = false -- disable line wrapping
 
-vim.opt.ignorecase = true    -- ignore case when searching
-vim.opt.smartcase = true     -- unless capital letter in search
+vim.opt.ignorecase = true -- ignore case when searching
+vim.opt.smartcase = true -- unless capital letter in search
 
-vim.opt.hlsearch = true     -- do not highlight all matches on previous search pattern
-vim.opt.incsearch = true     -- incrementally highlight searches as you type
+vim.opt.hlsearch = true -- do not highlight all matches on previous search pattern
+vim.opt.incsearch = true -- incrementally highlight searches as you type
 
 vim.opt.termguicolors = true -- enable true color support
+vim.opt.background = "dark"
+vim.opt.signcolumn = "yes"
 
-vim.opt.scrolloff = 8        -- minimum number of lines to keep above and below the cursor
-vim.opt.sidescrolloff = 8    --minimum number of columns to keep above and below the cursor
+vim.opt.scrolloff = 8 -- minimum number of lines to keep above and below the cursor
+vim.opt.sidescrolloff = 8 --minimum number of columns to keep above and below the cursor
+
+-- split windows
+vim.opt.splitright = true -- split vertical window to the right
+vim.opt.splitbelow = true -- split horizontal window to the bottom
 
 vim.opt.swapfile = false
 vim.opt.backup = false
 
 -- Make sure undodir works on Windows
 local home = os.getenv("HOME")
-if (home == nil) then
+if home == nil then
   home = os.getenv("UserProfile")
 end
 vim.opt.undodir = home .. "/.nvim/undodir"
 vim.opt.undofile = true
-
-vim.opt.termguicolors = true
 
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "python",
@@ -79,13 +84,23 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("n", "J", "mzJ`z")
 
 -- Replace the word at current position
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>//gI<Left><Left><Left>]], { desc = "Replace the word under the cursor", silent = true })
+vim.keymap.set(
+  "n",
+  "<leader>s",
+  [[:%s/\<<C-r><C-w>\>//gI<Left><Left><Left>]],
+  { desc = "Replace the word under the cursor", silent = true }
+)
 
 -- Show inline messages
 -- Show in floating window
-vim.keymap.set("n", "<leader>do", "<cmd>lua vim.diagnostic.open_float()<CR>", { desc = "Inline message to floating windows"})
-vim.keymap.set("n", "<leader>dn", "<cmd>lua vim.diagnostic.goto_next()<CR>", { desc = "Go to next message"})
-vim.keymap.set("n", "<leader>dp", "<cmd>lua vim.diagnostic.goto_prev()<CR>", { desc = "Go to previous message"})
+vim.keymap.set(
+  "n",
+  "<leader>do",
+  "<cmd>lua vim.diagnostic.open_float()<CR>",
+  { desc = "Inline message to floating windows" }
+)
+vim.keymap.set("n", "<leader>dn", "<cmd>lua vim.diagnostic.goto_next()<CR>", { desc = "Go to next message" })
+vim.keymap.set("n", "<leader>dp", "<cmd>lua vim.diagnostic.goto_prev()<CR>", { desc = "Go to previous message" })
 
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
@@ -99,10 +114,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 if vim.lsp.inlay_hint then
-  vim.keymap.set(
-    "n",
-    "<leader>hh",
-    function() vim.lsp.inlay_hint(0, nil) end,
-    { desc = "Toggle Inlay Hints" }
-  )
+  vim.keymap.set("n", "<leader>hh", function()
+    vim.lsp.inlay_hint(0, nil)
+  end, { desc = "Toggle Inlay Hints" })
 end
