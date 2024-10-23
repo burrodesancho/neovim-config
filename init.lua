@@ -22,6 +22,10 @@ else
     ui = {
       border = "rounded",
     },
+    checker = {
+      enabled = true,
+      notify = false,
+    },
   }
 
   require("lazy").setup("plugins", opts)
