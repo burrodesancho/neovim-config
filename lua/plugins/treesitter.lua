@@ -18,6 +18,8 @@ return {
       -- A list of parser names, or "all"
       ensure_installed = {
         "bash",
+        "dockerfile",
+        "gitignore",
         "lua",
         "json",
         "markdown",
