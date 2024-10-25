@@ -30,7 +30,7 @@ return {
   },
   {
     "folke/tokyonight.nvim",
-    enabled = true,
+    enabled = false,
     lazy = false,
     priority = 1000, -- make sure to load this before all the other start plugins
     config = function()
@@ -66,6 +66,17 @@ return {
       })
       -- load the colorscheme here
       vim.cmd([[colorscheme tokyonight]])
+    end,
+  },
+  {
+    "rebelot/kanagawa.nvim",
+    enabled = true,
+    lazy = false,
+    priority = 1000, -- make sure to load this before all the other start plugins
+    config = function()
+      require("kanagawa").setup({})
+      -- load the colorscheme here
+      vim.cmd([[colorscheme kanagawa]])
     end,
   },
 }
