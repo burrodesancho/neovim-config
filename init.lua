@@ -18,7 +18,7 @@ if vim.g.vscode then
   require("lazy").setup("vscode_stuff")
 else
   -- Regular nvim
-  local border = { "🭽", "▔", "🭾", "▕", "🭿", "▁", "🭼", "▏" }
+  local border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" }
   local opts = {
     ui = {
       border = border,

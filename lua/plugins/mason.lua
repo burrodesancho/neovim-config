@@ -12,8 +12,9 @@ return {
     local mason_lspconfig = require("mason-lspconfig")
     local mason_tool_installer = require("mason-tool-installer")
 
+    local border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" }
     mason.setup({
-      ui = { border = { "🭽", "▔", "🭾", "▕", "🭿", "▁", "🭼", "▏" } },
+      ui = { border = border },
     })
 
     mason_lspconfig.setup({

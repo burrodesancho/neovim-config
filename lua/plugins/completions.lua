@@ -24,7 +24,7 @@ return {
       local luasnip = require("luasnip")
       local lspkind = require("lspkind")
 
-      local border = { "🭽", "▔", "🭾", "▕", "🭿", "▁", "🭼", "▏" }
+      local border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" }
       local winhighlight = "Normal:TelescopePromptNormal,FloatBorder:DiagnosticInfo,CursorLine:PmenuSel,Search:None"
 
       require("luasnip.loaders.from_vscode").lazy_load()

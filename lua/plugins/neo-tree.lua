@@ -12,7 +12,7 @@ return {
   },
   config = function()
     require("neo-tree").setup({
-      popup_border_style = { "🭽", "▔", "🭾", "▕", "🭿", "▁", "🭼", "▏" },
+      popup_border_style = { "┌", "─", "┐", "│", "┘", "─", "└", "│" },
       window = {
         position = "left",
         width = 30,

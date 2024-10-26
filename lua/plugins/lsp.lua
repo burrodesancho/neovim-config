@@ -9,7 +9,7 @@ return {
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
     -- Add the border on hover and on signature help popup window
-    local border = { "🭽", "▔", "🭾", "▕", "🭿", "▁", "🭼", "▏" }
+    local border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" }
     local handlers = {
       ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
       ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),

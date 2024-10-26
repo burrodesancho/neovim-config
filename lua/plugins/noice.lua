@@ -42,21 +42,40 @@ return {
       },
       views = {
         cmdline_popup = {
+          position = { row = 5, col = "50%" },
+          size = { width = 60, height = "auto" },
           border = { style = border_style, padding = { 0, 1 } },
-          win_options = { winhighlight = { Normal = "TelescopePromptNormal", FloatBorder = "DiagnosticInfo" } },
+          win_options = {
+            winhighlight = {
+              Normal = "TelescopePromptNormal",
+              CursorLine = "TelescopePromptNormal",
+              FloatBorder = "DiagnosticInfo",
+            },
+          },
         },
-        cmdline_popupmenu = {
-          border = { style = border_style, padding = { 0, 1 } },
-          win_options = { winhighlight = { Normal = "TelescopePromptNormal", FloatBorder = "DiagnosticInfo" } },
-        },
-        popup = {
-          border = { style = border_style, padding = { 0, 1 } },
-          win_options = { winhighlight = { Normal = "TelescopePromptNormal", FloatBorder = "DiagnosticInfo" } },
-        },
-        popupmenu = {
-          border = { style = border_style, padding = { 0, 1 } },
-          win_options = { winhighlight = { Normal = "TelescopePromptNormal", FloatBorder = "DiagnosticInfo" } },
-        },
+        -- cmdline_popupmenu = {
+        --   position = { row = 8, col = "50%" },
+        --   size = { width = 60, height = "auto" },
+        --   border = { style = border_style, padding = { 0, 1 } },
+        --   win_options = {
+        --     winhighlight = {
+        --       Normal = "TelescopePromptNormal",
+        --       CursorLine = "TelescopePromptNormal",
+        --       FloatBorder = "DiagnosticInfo",
+        --     },
+        --   },
+        -- },
+        -- popup = {
+        --   border = { style = border_style, padding = { 0, 1 } },
+        --   win_options = { winhighlight = { Normal = "TelescopePromptNormal", FloatBorder = "DiagnosticInfo" } },
+        -- },
+        -- popupmenu = {
+        --   relative = "editor",
+        --   position = { row = 8, col = "50%" },
+        --   size = { width = 60, height = "auto" },
+        --   border = { style = border_style, padding = { 0, 1 } },
+        --   win_options = { winhighlight = { Normal = "TelescopePromptNormal", FloatBorder = "DiagnosticInfo" } },
+        -- },
       },
     })
 
