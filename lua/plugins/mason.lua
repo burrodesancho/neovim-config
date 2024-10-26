@@ -13,7 +13,7 @@ return {
     local mason_tool_installer = require("mason-tool-installer")
 
     mason.setup({
-      ui = { border = "rounded" },
+      ui = { border = { "🭽", "▔", "🭾", "▕", "🭿", "▁", "🭼", "▏" } },
     })
 
     mason_lspconfig.setup({

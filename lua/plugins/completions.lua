@@ -24,6 +24,9 @@ return {
       local luasnip = require("luasnip")
       local lspkind = require("lspkind")
 
+      local border = { "🭽", "▔", "🭾", "▕", "🭿", "▁", "🭼", "▏" }
+      local winhighlight = "Normal:TelescopePromptNormal,FloatBorder:DiagnosticInfo,CursorLine:PmenuSel,Search:None"
+
       require("luasnip.loaders.from_vscode").lazy_load()
 
       cmp.setup({
@@ -36,8 +39,14 @@ return {
           end,
         },
         window = {
-          completion = cmp.config.window.bordered(),
-          documentation = cmp.config.window.bordered(),
+          completion = cmp.config.window.bordered({
+            border = border,
+            winhighlight = winhighlight,
+          }),
+          documentation = cmp.config.window.bordered({
+            border = border,
+            winhighlight = winhighlight,
+          }),
         },
         mapping = cmp.mapping.preset.insert({
           ["<C-b>"] = cmp.mapping.scroll_docs(-4),

@@ -2,7 +2,7 @@ return {
   "nvim-neo-tree/neo-tree.nvim",
   enabled = true,
   keys = {
-    { "<leader>e",  "<cmd>Neotree filesystem toggle<CR>", desc = "Neotree" },
+    { "<leader>e", "<cmd>Neotree filesystem toggle<CR>", desc = "Neotree" },
     { "<leader>bf", "<cmd>Neotree buffers reveal float<CR>", desc = "Neotree buffers" },
   },
   dependencies = {
@@ -12,7 +12,7 @@ return {
   },
   config = function()
     require("neo-tree").setup({
-      popup_border_style = "rounded",
+      popup_border_style = { "🭽", "▔", "🭾", "▕", "🭿", "▁", "🭼", "▏" },
       window = {
         position = "left",
         width = 30,
