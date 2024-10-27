@@ -5,7 +5,7 @@ return {
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-telescope/telescope-ui-select.nvim",
-    { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' }
+    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
   },
   event = "VeryLazy",
   config = function()
@@ -29,7 +29,7 @@ return {
           override_generic_sorter = true,
           override_file_sorter = true,
           case_mode = "smart_case",
-        }
+        },
       },
     })
 
@@ -45,5 +45,10 @@ return {
     vim.keymap.set("n", "<leader>fz", builtin.live_grep, { desc = "Live Grep" })
     vim.keymap.set("n", "<leader>fp", builtin.git_files, { desc = "Find Git Files" })
     vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "List Help Tags" })
+    vim.keymap.set("n", "<leader>fr", builtin.registers, { desc = "List Registers" })
+    vim.keymap.set("n", "<leader>fm", builtin.marks, { desc = "List Marks" })
+    vim.keymap.set("n", "<leader>fgb", builtin.git_branches, { desc = "List Git Branches" })
+    vim.keymap.set("n", "<leader>fgs", builtin.git_status, { desc = "Git Status" })
+    vim.keymap.set("n", "<leader>fgS", builtin.git_stash, { desc = "Git Stash" })
   end,
 }
